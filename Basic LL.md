@@ -73,17 +73,61 @@ if __name__ == '__main__':
   
   link_list.print_list()
 
-      
+       
+       
+# version 3: Doubly LinkedList
 
 
-              
+# init node 
+class Node: 
+  def __init__(self, data): 
+    self.data  = data
+    self.prev = None 
+    self.next  = None
+   
 
+# linkedlist graph
+class DoublyLinkedList: 
+  def __init__(self): 
+    self.head = None 
+    self.start_node = None 
+    self.last_node  = None  
+    
+  def append(self, data):
+    if self.last_node is None: 
+      self.head  = Node(data)
+      self.last_node  = self.head 
+    else: 
+      new_node = Node(data)
+      self.last_node.next = new_node
+      new_node.prev = self.last_node
+      new_node.next = None 
+      self.last_node = new_node  # update after create next 
 
-## Complexity Analysis
- 
+  def print_list(self, Type):
+    
+    if Type == 'LTR':
+      curr = self.head 
+      while curr: 
+        print(curr.data, end = ' ')
+        curr = curr.next 
+      print()
+    else: 
+      curr = self.last_node 
+      while curr: 
+        print(curr.data, end = ' ')
+        curr = curr.prev 
+      print() 
 
-              
+    
 
+if __name__ == '__main__': 
+  link_list = DoublyLinkedList()
+  link_list.append(10)
+  link_list.append(20)
+  link_list.append(50)
+  link_list.append(100)
+  
+  link_list.print_list('LTR')
 
-## Complexity Analysis
- 
+       
