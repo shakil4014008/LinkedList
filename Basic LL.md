@@ -41,7 +41,6 @@ class Node:
   def __init__(self, data): 
     self.data  = data
     self.next  = None
-    self.last_node  = None 
 
 # linkedlist graph
 class LinkedList: 
