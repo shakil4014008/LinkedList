@@ -18,18 +18,35 @@ class LinkedList:
     while temp: 
       print(temp.data)
       temp = temp.next 
+      
+      
+def get_count(self): 
+    temp = self.head
+    count  = 0
+    while temp:
+      count += 1
+      temp = temp.next
+    return count 
 
+  def find_middle(self):
+    temp  = self.head
+    len_of_LL = self.get_count() // 2
+    print(len_of_LL)
+    print()
+    while len_of_LL != 0: 
+      len_of_LL -= 1
+      temp = temp.next
+    print(temp.data) 
 if __name__ == '__main__': 
 
   llist = LinkedList()
   llist.head  = Node(10)
   second = Node(20)
   third  = Node(30)
-
   llist.head.next = second
   second.next = third
   llist.print_list()
-
+  llist.find_middle()
       
 
 
