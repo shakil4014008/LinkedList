@@ -37,6 +37,23 @@ def get_count(self):
       len_of_LL -= 1
       temp = temp.next
     print(temp.data) 
+    
+   def is_circular(self):     
+    slow = self.head
+    fast = self.head.next  
+    result  = False 
+   
+    while fast and fast.next: 
+      slow = slow.next
+      fast = fast.next.next  
+
+      if slow == fast: 
+        result  = True 
+        break 
+    print(result)
+    print()
+    
+    
 if __name__ == '__main__': 
 
   llist = LinkedList()
